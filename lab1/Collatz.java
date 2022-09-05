@@ -3,7 +3,7 @@
  */
 public class Collatz {
 
-    /** Buggy implementation of nextNumber! */
+    /** Buggy implementation of nextNumber!
     public static int nextNumber(int n) {
         if (n  == 128) {
             return 1;
@@ -19,6 +19,24 @@ public class Collatz {
         System.out.print(n + " ");
         while (n != 1) {
             n = nextNumber(n);
+            System.out.print(n + " ");
+        }
+        System.out.println();
+    }
+     */
+    public static int next_number(int n){
+        if (n % 2 == 0){
+            n = n / 2;
+        } else {
+            n = n * 3 + 1;
+        }
+        return n;
+    }
+    public static void main(String[] args){
+        int n = 5;
+        System.out.print(n + " ");
+        while (n != 1){
+            n = next_number(n);
             System.out.print(n + " ");
         }
         System.out.println();
